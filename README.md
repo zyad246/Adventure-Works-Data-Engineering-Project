@@ -21,17 +21,16 @@ Extract data from **GitHub API**, ingest it into **Azure Data Lake (Bronze conta
 ### 🛠 **Implementation Steps**  
 #### 🔹 Extract Data from GitHub API  
 ✅ Used **HTTP Linked Service** to fetch raw dataset from the **GitHub repository**.  
-✅ Created a **Lookup Activity** in **ADF** to fetch file details dynamically.  
-📌 **Screenshot of Linked Services in ADF:**  
+✅ Created a **Lookup Activity** in **ADF** to fetch file details dynamically.   
 
 #### 🔹 Ingest Data into Azure Data Lake  
 ✅ Used **ForEach Activity** in ADF to iterate over files and load them into **Bronze container**.  
 ✅ Created a **dynamic dataset** in ADF using parameters for folder and file names.  
-📌 **Screenshot of the ADF pipeline:**  
+
 
 #### 🔹 Storage Structure in Azure Data Lake (Bronze Container)  
 ✅ Data stored in **folders per dataset** in **Azure Data Lake Gen2**.  
-📌 **Screenshot of Bronze storage container:**  
+  
 
 ### 📚 **Topics Covered**  
 ✔️ Working with APIs  
@@ -53,12 +52,10 @@ Transform raw data in **Azure Databricks** using **Apache Spark**, store cleaned
 #### 🔹 Load & Transform Data in Databricks  
 ✅ Read raw data from **Bronze storage** using **Spark DataFrames**.  
 ✅ Applied **Data Cleansing & Transformation** (e.g., handling null values, converting data types).  
-✅ Saved transformed data in **Parquet format** in the **Silver storage**.  
-📌 **Databricks Notebook:** `AWproject(Silver_layer).ipynb`  
+✅ Saved transformed data in **Parquet format** in the **Silver storage**.   
 
 #### 🔹 Storage Structure in Azure Data Lake (Silver Container)  
-✅ Transformed data stored in **organized folders** in **Parquet format**.  
-📌 **Screenshot of Silver storage container:**  
+✅ Transformed data stored in **organized folders** in **Parquet format**. 
 
 ### 📚 **Topics Covered**  
 ✔️ Azure Databricks Cluster setup & configuration  
@@ -78,12 +75,11 @@ Extract transformed data from **Silver storage** into **Azure Synapse Analytics*
 ✅ Configured **External Data Source** pointing to the **Silver storage**.  
 ✅ Defined **External File Formats** for reading **Parquet files**.  
 ✅ Created **External Tables** in Synapse for each dataset.  
-📌 **SQL Script:** `Create External Table.sql`  
 
 #### 🔹 Implement Data Lakehouse Abstraction with Views  
 ✅ Used **OPENROWSET** to query **Parquet files** directly from storage.  
 ✅ Created **Views** for each dataset to provide an **abstraction layer**.  
-📌 **SQL Script:** `Create Views Gold.sql`  
+
 
 #### 🔹 Comparison: Serverless vs Dedicated SQL Pools  
 - **Serverless SQL Pool** → Pay-as-you-go model, ideal for querying data without ETL.  
